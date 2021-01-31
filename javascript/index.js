@@ -5,6 +5,7 @@ import endRecursiveFibonacci from './endRecursiveFibonacci.js'
 import endRecursiveTinyFibonacci from './endRecursiveTinyFibonacci.js'
 
 import yCombine from './generic.js'
+import tinyYCombine from './tinyGeneric.js'
 
 console.log(fibonacci(6))
 console.log(smallFibonacci(7))
@@ -19,3 +20,4 @@ console.log(endRecursiveTinyFibonacci(10))
 
 let makeF = f => x => (x < 3 ? 1 : f(x - 1) + f(x - 2))
 console.log(yCombine(makeF)(11))
+console.log(tinyYCombine(makeF)(12))
