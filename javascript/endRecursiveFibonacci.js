@@ -1,13 +1,16 @@
 export default function endRecursiveFibonacci(n) {
-    let makeF = f => (x, acc) => {
-        if (x === 1) {
-            return acc + 1
-        } else {
-            return f(x - 1, acc + x)
+    let makeF = f => (n, a, b) => {
+        switch (n) {
+            case 0:
+                return a
+            case 1:
+                return b
+            default:
+                return f(n - 1, b, a + b)
         }
     }
 
-    let y = y => makeF((x, acc) => y(y)(x, acc))
+    let y = y => makeF((n, a, b) => y(y)(n, a, b))
 
-    return y(y)(n, 0)
+    return y(y)(n, 0, 1)
 }

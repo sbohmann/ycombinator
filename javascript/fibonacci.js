@@ -1,9 +1,9 @@
 export default function fibonacci(n) {
     let makeF = f => x => {
-        if (x === 1) {
+        if (x < 3) {
             return 1
         } else {
-            return f(x - 1) + x
+            return f(x - 1) + f(x - 2)
         }
     }
 

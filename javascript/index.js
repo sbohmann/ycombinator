@@ -17,7 +17,5 @@ console.log(tinyFibonacci(8))
 console.log(endRecursiveFibonacci(9))
 console.log(endRecursiveTinyFibonacci(10))
 
-let makeF = f => x => (x === 1 ? 1 : f(x - 1) + x)
+let makeF = f => x => (x < 3 ? 1 : f(x - 1) + f(x - 2))
 console.log(yCombine(makeF)(11))
-
-console.log(yCombine(makeF)(11_000))
