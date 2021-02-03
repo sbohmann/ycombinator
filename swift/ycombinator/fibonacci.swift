@@ -1,12 +1,6 @@
-import Foundation
-
-struct AutoFunction {
-    let y: (AutoFunction) -> (Int) -> Int
-}
-
 func fibonacci(n: Int) -> Int {
     func makeF(f: @escaping (Int) -> Int) -> (Int) -> Int {
-        {x in
+        { x in
             switch x {
             case 0: return 0
             case 1: return 1
@@ -15,9 +9,9 @@ func fibonacci(n: Int) -> Int {
         }
     }
 
-    func y(y: AutoFunction) -> (Int) -> Int {
-        makeF {x in y.y(y)(x)}
+    func y(y: AutoFunction<Int, Int>) -> (Int) -> Int {
+        makeF { x in y.call(y)(x) }
     }
 
-    return y(y: AutoFunction(y: y))(n)
+    return y(y: AutoFunction<Int, Int>(call: y))(n)
 }
