@@ -13,6 +13,5 @@ func makeFibonacci(f: @escaping F) -> F {
 }
 
 for n in 0..<10 {
-    // Error: Converting non-escaping value to '(Int) -> Int' may allow it to escape
     print(n, fibonacci(n: n), generic(makeF: makeFibonacci)(n))
 }
