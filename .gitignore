@@ -5,3 +5,4 @@
 /dotnet/**/*.csproj
 /dotnet/**/obj
 /**/bin
+python/venv
