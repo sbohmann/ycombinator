@@ -1,4 +1,7 @@
 /**/.idea
 /**/*.iml
 /**/*.xcodeproj
-/bin
+/dotnet/**/*.sln
+/dotnet/**/*.csproj
+/dotnet/**/obj
+/**/bin
