@@ -8,5 +8,5 @@
     (let [y (fn [y] (fn [x] ((makeF (y y)) x)))]
           ((y y) n))))
 
-(let [n 10]
-  (.println System/out (fibonacci n)))
+(doseq [n (range 0 10)]
+  (.println System/out (str n \space (fibonacci n))))
