@@ -17,7 +17,7 @@ namespace csharp {
         
         public static void Main(string[] args) {
             for (var n = 0; n < 10; ++n) {
-                Console.WriteLine("{0} {1} {2}", n, Fibonacci.ForIndex(n), Generic.Combine(MakeFibonacci)(n));
+                Console.WriteLine($"{n} {Fibonacci.ForIndex(n)} {Generic.Combine(MakeFibonacci)(n)}");
             }
         }
     }
