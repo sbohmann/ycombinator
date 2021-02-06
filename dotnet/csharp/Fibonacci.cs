@@ -1,9 +1,9 @@
 using System;
 
 namespace csharp {
-    delegate Func<int, int> Y(Y y);
-
     static class Fibonacci {
+        delegate Func<int, int> Auto(Auto self);
+        
         public static int ForIndex(int n) {
             return Y(Y)(n);
         }
@@ -21,7 +21,7 @@ namespace csharp {
             };
         }
 
-        static Func<int, int> Y(Y y) {
+        static Func<int, int> Y(Auto y) {
             return x => MakeF(y(y))(x);
         }
     }
