@@ -1,13 +1,11 @@
 using System;
 
 namespace csharp {
-    struct Y : IAutoFunction<Func<int, int>> {
-        public Func<IAutoFunction<Func<int, int>>, Func<int, int>> Apply { get; set; }
-    }
+    delegate Func<int, int> Y(Y y);
 
     static class Fibonacci {
         public static int ForIndex(int n) {
-            return Y(new Y {Apply = Y})(n);
+            return Y(Y)(n);
         }
 
         static Func<int, int> MakeF(Func<int, int> f) {
@@ -23,8 +21,8 @@ namespace csharp {
             };
         }
 
-        static Func<int, int> Y(IAutoFunction<Func<int, int>> y) {
-            return x => MakeF(y.Apply(y))(x);
+        static Func<int, int> Y(Y y) {
+            return x => MakeF(y(y))(x);
         }
     }
 }

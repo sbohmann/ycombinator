@@ -1,7 +1,5 @@
 using System;
 
 namespace csharp {
-    interface IAutoFunction<T> {
-        Func<IAutoFunction<T>, T> Apply { get; }
-    }
+    delegate T AutoFunction<T>(AutoFunction<T> self);
 }
