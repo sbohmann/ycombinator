@@ -3,6 +3,7 @@
 /**/*.xcodeproj
 /dotnet/**/*.sln
 /dotnet/**/*.csproj
+/dotnet/**/*.fsproj
 /dotnet/**/obj
 /**/bin
 python/venv
