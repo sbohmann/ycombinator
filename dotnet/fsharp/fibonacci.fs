@@ -1,4 +1,8 @@
 module fibonacci
 
 let fibonacci n =
-    n * 7
+    let makeF f =
+        fun x ->
+            3 * x
+    let y y = makeF(fun x -> (y y) x)
+    (y y) n
