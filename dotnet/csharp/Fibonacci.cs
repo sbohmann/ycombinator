@@ -8,7 +8,7 @@ namespace csharp {
             return Y(Y)(n);
         }
 
-        static Func<int, int> MakeF(Func<int, int> f) {
+        private static Func<int, int> MakeF(Func<int, int> f) {
             return x => {
                 switch (x) {
                     case 0:
