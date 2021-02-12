@@ -1,6 +1,7 @@
 ﻿open System
 
 open fibonacci
+open delegateFibonacci
 open generic
 
 let makeFibonacci f: int -> int =
@@ -10,5 +11,5 @@ let makeFibonacci f: int -> int =
 [<EntryPoint>]
 let main argv =
     for n in 0..9 do
-        Console.WriteLine $"{n} {fibonacci n} {(combine makeFibonacci) n}"
+        Console.WriteLine $"{n} {fibonacci n} {delegateFibonacci n} {(combine makeFibonacci) n}"
     0
