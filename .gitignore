@@ -6,4 +6,5 @@
 /dotnet/**/*.fsproj
 /dotnet/**/obj
 /**/bin
+/**/*.class
 python/venv
