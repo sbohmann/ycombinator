@@ -7,7 +7,7 @@ export default function fibonacci(n) {
         }
     }
 
-    let y = y => makeF(x => y(y)(x))
+    let y = y => x => makeF(y(y))(x)
 
     return y(y)(n)
 }

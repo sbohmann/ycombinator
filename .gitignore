@@ -8,3 +8,6 @@
 /**/bin
 /**/*.class
 python/venv
+package-lock.json
+/lib
+/out
