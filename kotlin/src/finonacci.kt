@@ -1,13 +1,19 @@
-data class Y(val call: (Y) -> (Int) -> Int)
-
 fun fibonacci(n: Int): Int {
-    fun makeF(f: (Int) -> Int) = fun (x: Int): Int {
-        return if (x < 3) 1 else f(x - 1) + f(x - 2)
+    data class Y(val call: (Y) -> (Int) -> Int)
+
+    val makeF = { f: (Int) -> Int ->
+        { x: Int ->
+            when (x) {
+                0 -> 0
+                1 -> 1
+                else -> f(x - 1) + f(x - 2)
+            }
+        }
     }
 
-    fun y(y: Y): (Int) -> Int {
-        return fun(x: Int) = makeF(y(y))(x)
+    val y = { y: Y ->
+        { x: Int -> makeF(y.call(y))(x) }
     }
 
-    return y(Y(::y))(n)
+    return y(Y(y))(n)
 }
